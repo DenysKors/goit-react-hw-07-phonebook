@@ -6,10 +6,10 @@ export const selectFilteredContacts = state => {
   });
 };
 
-export const getContacts = state => state.contacts.items;
+export const selectContacts = state => state.contacts.items;
 
-export const getFilteredContacts = state => state.filter.filter;
+export const selectFilterContacts = state => state.filter.filter;
 
-export const getLoadingStatus = state => state.contacts.isLoading;
+export const selectLoadingStatus = state => state.contacts.isLoading;
 
-export const getErrorStatus = state => state.contacts.error;
+export const selectErrorStatus = state => state.contacts.error;

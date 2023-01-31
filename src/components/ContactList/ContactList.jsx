@@ -12,7 +12,7 @@ export const ContactList = () => {
     dispatch(deleteContact(id));
   };
   return (
-    <ul>
+    <ul style={{ width: 500 }}>
       {filteredContacts.map(({ id, name, phone }) => (
         <li key={id}>
           <Text>

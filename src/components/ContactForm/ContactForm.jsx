@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsThunk';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import {
   Form,
   FormLabel,
@@ -14,7 +14,7 @@ export function ContactForm() {
   const [phone, setPhone] = useState('');
 
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
   const inputChange = evt => {
     const { value, name } = evt.target;
