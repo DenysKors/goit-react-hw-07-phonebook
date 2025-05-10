@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-const BASE_URL = 'https://63d7c5c75dbd7232442ca9e5.mockapi.io/api/v1';
+import { BASE_URL } from 'constants/api';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
@@ -10,7 +10,7 @@ export const fetchContacts = createAsyncThunk(
       const { data } = await axios.get(BASE_URL + '/contacts');
       return data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      return thunkApi.rejectWithValue(error);
     }
   }
 );
@@ -25,7 +25,7 @@ export const addContact = createAsyncThunk(
       });
       return data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      return thunkApi.rejectWithValue(error);
     }
   }
 );
@@ -37,7 +37,7 @@ export const deleteContact = createAsyncThunk(
       const { data } = await axios.delete(`${BASE_URL + '/contacts'}/${id}`);
       return data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      return thunkApi.rejectWithValue(error);
     }
   }
 );

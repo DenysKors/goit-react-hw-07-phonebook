@@ -31,7 +31,7 @@ export function App() {
       <Filter />
       {error !== null && (
         <p style={{ color: 'red', fontWeight: 700, fontSize: 20 }}>
-          Something gone wrong, please try again!
+          Something gone wrong, please try again! / Add DB URL
         </p>
       )}
       {isLoading && !error && <p>Loading, please wait...</p>}
